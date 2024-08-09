@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.glitch-button {
+    font-size: 24px;
+    padding: 15px 30px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.glitch-button:before, .glitch-button:after {
+    content: 'Click Me';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: #fff;
+    clip: rect(0, 0, 0, 0);
+    animation: glitch 2s infinite;
+}
+
+.glitch-button:after {
+    left: 2px;
+    text-shadow: -2px 0 #000;
+    animation: glitch 2s infinite reverse;
+}
+
+@keyframes glitch {
+    0% {
+        clip: rect(22px, 9999px, 44px, 0);
+        transform: skew(0.5deg);
+    }
+    10% {
+        clip: rect(42px, 9999px, 66px, 0);
+        transform: skew(0.5deg);
+    }
+    20% {
+        clip: rect(12px, 9999px, 34px, 0);
+        transform: skew(0.5deg);
+    }
+    30% {
+        clip: rect(52px, 9999px, 74px, 0);
+        transform: skew(0.5deg);
+    }
+    40% {
+        clip: rect(32px, 9999px, 54px, 0);
+        transform: skew(0.5deg);
+    }
+    50% {
+        clip: rect(22px, 9999px, 44px, 0);
+        transform: skew(0.5deg);
+    }
+    60% {
+        clip: rect(42px, 9999px, 66px, 0);
+        transform: skew(0.5deg);
+    }
+    70% {
+        clip: rect(12px, 9999px, 34px, 0);
+        transform: skew(0.5deg);
+    }
+    80% {
+        clip: rect(52px, 9999px, 74px, 0);
+        transform: skew(0.5deg);
+    }
+    90% {
+        clip: rect(32px, 9999px, 54px, 0);
+        transform: skew(0.5deg);
+    }
+    100% {
+        clip: rect(22px, 9999px, 44px, 0);
+        transform: skew(0.5deg);
+    }
+}
