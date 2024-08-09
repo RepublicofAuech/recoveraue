@@ -25,7 +25,11 @@ body {
     transition: opacity 0.5s ease;
 }
 
-.glitch-button:before, .glitch-button:after {
+.glitch-active {
+    animation: extreme-glitch 0.2s 8; /* Faster and more repetitions */
+}
+
+.glitch-active:before, .glitch-active:after {
     content: 'Click Me';
     position: absolute;
     top: 0;
@@ -35,58 +39,106 @@ body {
     background: transparent;
     color: #fff;
     clip: rect(0, 0, 0, 0);
-    animation: glitch 2s infinite;
+    animation: color-bars 0.2s 8;
+    opacity: 0.8;
 }
 
-.glitch-button:after {
+.glitch-active:after {
     left: 2px;
-    text-shadow: -2px 0 #000;
-    animation: glitch 2s infinite reverse;
+    text-shadow: -2px 0 #ff00ff; /* Magenta color for the after pseudo-element */
+    animation: color-bars 0.2s 8 reverse;
 }
 
-@keyframes glitch {
+@keyframes extreme-glitch {
     0% {
-        clip: rect(22px, 9999px, 44px, 0);
-        transform: skew(0.5deg);
+        transform: translate(0, 0) skew(0deg) rotate(0deg);
+        opacity: 1;
     }
     10% {
-        clip: rect(42px, 9999px, 66px, 0);
-        transform: skew(0.5deg);
+        transform: translate(-5px, -5px) skew(-5deg) rotate(-3deg);
+        opacity: 0.8;
     }
     20% {
-        clip: rect(12px, 9999px, 34px, 0);
-        transform: skew(0.5deg);
+        transform: translate(5px, 5px) skew(5deg) rotate(3deg);
+        opacity: 1;
     }
     30% {
-        clip: rect(52px, 9999px, 74px, 0);
-        transform: skew(0.5deg);
+        transform: translate(-10px, 5px) skew(-10deg) rotate(-5deg);
+        opacity: 0.6;
     }
     40% {
-        clip: rect(32px, 9999px, 54px, 0);
-        transform: skew(0.5deg);
+        transform: translate(10px, -5px) skew(10deg) rotate(5deg);
+        opacity: 1;
     }
     50% {
-        clip: rect(22px, 9999px, 44px, 0);
-        transform: skew(0.5deg);
+        transform: translate(5px, -10px) skew(5deg) rotate(-10deg);
+        opacity: 0.7;
     }
     60% {
-        clip: rect(42px, 9999px, 66px, 0);
-        transform: skew(0.5deg);
+        transform: translate(-5px, 10px) skew(-5deg) rotate(10deg);
+        opacity: 1;
     }
     70% {
-        clip: rect(12px, 9999px, 34px, 0);
-        transform: skew(0.5deg);
+        transform: translate(-15px, 5px) skew(-15deg) rotate(-7deg);
+        opacity: 0.5;
     }
     80% {
-        clip: rect(52px, 9999px, 74px, 0);
-        transform: skew(0.5deg);
+        transform: translate(15px, -5px) skew(15deg) rotate(7deg);
+        opacity: 1;
     }
     90% {
-        clip: rect(32px, 9999px, 54px, 0);
-        transform: skew(0.5deg);
+        transform: translate(-20px, -10px) skew(-20deg) rotate(-10deg);
+        opacity: 0.4;
     }
     100% {
-        clip: rect(22px, 9999px, 44px, 0);
-        transform: skew(0.5deg);
+        transform: translate(20px, 10px) skew(20deg) rotate(10deg);
+        opacity: 1;
+    }
+}
+
+@keyframes color-bars {
+    0% {
+        clip: rect(10px, 9999px, 50px, 0);
+        transform: translate(0px, 0px);
+    }
+    10% {
+        clip: rect(70px, 9999px, 20px, 0);
+        transform: translate(-2px, -2px);
+    }
+    20% {
+        clip: rect(40px, 9999px, 90px, 0);
+        transform: translate(2px, 2px);
+    }
+    30% {
+        clip: rect(90px, 9999px, 10px, 0);
+        transform: translate(-4px, 4px);
+    }
+    40% {
+        clip: rect(20px, 9999px, 80px, 0);
+        transform: translate(4px, -4px);
+    }
+    50% {
+        clip: rect(100px, 9999px, 30px, 0);
+        transform: translate(-6px, 6px);
+    }
+    60% {
+        clip: rect(50px, 9999px, 70px, 0);
+        transform: translate(6px, -6px);
+    }
+    70% {
+        clip: rect(80px, 9999px, 40px, 0);
+        transform: translate(-8px, 8px);
+    }
+    80% {
+        clip: rect(30px, 9999px, 100px, 0);
+        transform: translate(8px, -8px);
+    }
+    90% {
+        clip: rect(60px, 9999px, 60px, 0);
+        transform: translate(-10px, 10px);
+    }
+    100% {
+        clip: rect(20px, 9999px, 90px, 0);
+        transform: translate(10px, -10px);
     }
 }
