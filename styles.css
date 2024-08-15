@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   background-color: #000000; /* Black button background */
-  color: #FFFFFF; /* White text */
+  color: #000000; /* White text */
   border: 2px solid #FFFFFF; /* White border */
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
