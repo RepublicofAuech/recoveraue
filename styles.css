@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   background-color: #000000; /* Black button background */
-  color: #000000; /* White text */
+  color: #FFFFFF; /* White text */
   border: 2px solid #FFFFFF; /* White border */
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
@@ -28,6 +28,6 @@ body {
 
 #confirm-button.confirmation {
   background-color: #FF0000; /* Red background for confirmation state */
-  color: #FFFFFF; /* White text for confirmation state */
+  color: #000000; /* White text for confirmation state */
   border: 2px solid #FF0000; /* Red border in confirmation state */
 }
