@@ -1,144 +1,33 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000000; /* Black background */
 }
 
-.container {
-    text-align: center;
+.button-container {
+  text-align: center;
 }
 
-.glitch-button {
-    font-size: 24px;
-    padding: 15px 30px;
-    border: 2px solid #fff;
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: opacity 0.5s ease;
+#confirm-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #000000; /* Black button background */
+  color: #FFFFFF; /* White text */
+  border: 2px solid #FFFFFF; /* White border */
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.glitch-active {
-    animation: extreme-glitch 0.2s 8; /* Faster and more repetitions */
+#confirm-button:hover {
+  background-color: #333333; /* Slightly lighter black for hover effect */
 }
 
-.glitch-active:before, .glitch-active:after {
-    content: 'Click Me';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    color: #fff;
-    clip: rect(0, 0, 0, 0);
-    animation: color-bars 0.2s 8;
-    opacity: 0.8;
-}
-
-.glitch-active:after {
-    left: 2px;
-    text-shadow: -2px 0 #ff00ff; /* Magenta color for the after pseudo-element */
-    animation: color-bars 0.2s 8 reverse;
-}
-
-@keyframes extreme-glitch {
-    0% {
-        transform: translate(0, 0) skew(0deg) rotate(0deg);
-        opacity: 1;
-    }
-    10% {
-        transform: translate(-5px, -5px) skew(-5deg) rotate(-3deg);
-        opacity: 0.8;
-    }
-    20% {
-        transform: translate(5px, 5px) skew(5deg) rotate(3deg);
-        opacity: 1;
-    }
-    30% {
-        transform: translate(-10px, 5px) skew(-10deg) rotate(-5deg);
-        opacity: 0.6;
-    }
-    40% {
-        transform: translate(10px, -5px) skew(10deg) rotate(5deg);
-        opacity: 1;
-    }
-    50% {
-        transform: translate(5px, -10px) skew(5deg) rotate(-10deg);
-        opacity: 0.7;
-    }
-    60% {
-        transform: translate(-5px, 10px) skew(-5deg) rotate(10deg);
-        opacity: 1;
-    }
-    70% {
-        transform: translate(-15px, 5px) skew(-15deg) rotate(-7deg);
-        opacity: 0.5;
-    }
-    80% {
-        transform: translate(15px, -5px) skew(15deg) rotate(7deg);
-        opacity: 1;
-    }
-    90% {
-        transform: translate(-20px, -10px) skew(-20deg) rotate(-10deg);
-        opacity: 0.4;
-    }
-    100% {
-        transform: translate(20px, 10px) skew(20deg) rotate(10deg);
-        opacity: 1;
-    }
-}
-
-@keyframes color-bars {
-    0% {
-        clip: rect(10px, 9999px, 50px, 0);
-        transform: translate(0px, 0px);
-    }
-    10% {
-        clip: rect(70px, 9999px, 20px, 0);
-        transform: translate(-2px, -2px);
-    }
-    20% {
-        clip: rect(40px, 9999px, 90px, 0);
-        transform: translate(2px, 2px);
-    }
-    30% {
-        clip: rect(90px, 9999px, 10px, 0);
-        transform: translate(-4px, 4px);
-    }
-    40% {
-        clip: rect(20px, 9999px, 80px, 0);
-        transform: translate(4px, -4px);
-    }
-    50% {
-        clip: rect(100px, 9999px, 30px, 0);
-        transform: translate(-6px, 6px);
-    }
-    60% {
-        clip: rect(50px, 9999px, 70px, 0);
-        transform: translate(6px, -6px);
-    }
-    70% {
-        clip: rect(80px, 9999px, 40px, 0);
-        transform: translate(-8px, 8px);
-    }
-    80% {
-        clip: rect(30px, 9999px, 100px, 0);
-        transform: translate(8px, -8px);
-    }
-    90% {
-        clip: rect(60px, 9999px, 60px, 0);
-        transform: translate(-10px, 10px);
-    }
-    100% {
-        clip: rect(20px, 9999px, 90px, 0);
-        transform: translate(10px, -10px);
-    }
+#confirm-button.confirmation {
+  background-color: #FF0000; /* Red background for confirmation state */
+  color: #000000; /* White text for confirmation state */
+  border: 2px solid #FF0000; /* Red border in confirmation state */
 }
